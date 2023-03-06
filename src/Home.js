@@ -8,6 +8,8 @@ const Home = () => {
         { title: "My favor Korean drama in 2023", body: "The glory", author: "Lexi", id: 3 }
     ])
 
+    const [name, setName] = useState("alex");
+
     const handleDelete = (id) => {
         const newArray = blogs.filter((blog) => blog.id !== id);
         setBlogs(newArray);
@@ -15,13 +17,14 @@ const Home = () => {
 
     useEffect(() => {
         console.log("Call useEffect");
-        console.log(blogs);
-    })
+        console.log(name);
+    }, [name]);
 
     return (
         <div className="home">
             <Bloglist blogs={blogs} title="All blogs" handleDelete={handleDelete} />
-            <Bloglist blogs={blogs.filter((blog) => blog.author === "Alex")} title="Alex blogs" handleDelete={handleDelete} />
+            <button onClick={() => setName("John")}>change name</button>
+            <p>{name}</p>
         </div>
     );
 }
