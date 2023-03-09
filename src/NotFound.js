@@ -4,11 +4,10 @@ const NotFound = () => {
     return (
         <div className="not-found">
             <h2>Unfortunately</h2>
-            <p>Can not found this page by your URL</p>
+            <p>Couldn't find this page by your URL.L</p>
             <Link to="/">Let's back to homepage......</Link>
         </div>
     );
 }
 
 export default NotFound;
-;
